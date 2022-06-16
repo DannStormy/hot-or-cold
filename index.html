@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot/Cold</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- style sheet -->
+		<link rel="stylesheet" href="./styles/main.css" />
+    <!-- javascript -->
+    <script src="./index.js"></script>
+		<title>Hot or cold</title>
+	</head>
 
-    <script src="index.js"></script>
-</head>
-<body>
-    <container>
-        <h1 id="paragraph">Fly</h1>
-        <button id="start-button">START GAME</button>
-        <p>HotorCold</p>
-        <h1>Hot or Cold</h1>
-    </container>
+	<body class="container">
+		<div class="card">
+			<h1 class="title">Hot or Cold</h1>
 
-</body>
+			<form id="myForm" class="form-wrapper">
+				<label for="name" class="text">Input player's name below:</label>
+				<input
+					type="text"
+					name="name"
+          id="name"
+					placeholder="Enter username"
+					required
+				/>
+        <input type="button" class="btn" onclick="getName()" value="Start Playing!">
+			</form>
+
+			<p class="info">The Hot and Cold game is a random number guess of numbers between 1 and 50</p>
+		</div>
+	</body>
 </html>
+
+<!-- https://www.pexels.com/video/mixture-of-different-colors-of-ink-in-liquid-1722882/ -->
