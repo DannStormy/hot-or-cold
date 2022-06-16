@@ -14,11 +14,11 @@
       console.log(randCompChoice);
       console.log("Game Started");
 
-      //prompt computer to choose a random number between 1 - 20
-      function computerChoice() {
-        return Math.floor(Math.random() * 21);
-      }
-
     });
+    //prompt computer to choose a random number between 1 - 20
+    function computerChoice() {
+      return Math.floor(Math.random() * 21);
+    }
+
   }, false);
 })()
