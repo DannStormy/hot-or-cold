@@ -1,43 +1,79 @@
-// I had to comment this part first because I kept getting an error that states document is not defined. I dont understand the error, but I'm sure in the morning, we'll be able to figure it out
-
 (function () {
+  //check if DOM elements are loaded
   document.addEventListener('DOMContentLoaded', function () {
     //selectors for html elements
     //let resetButton = document.getElementById("reset-button");
+    let guessBtn = document.querySelector(".guess-btn")
     let infoBox = document.getElementById("info");
-    //let userChoice = document.getElementById("user-choice");
+    let result = document.querySelector(".result")
+
     //computer commentary
-    // var commentary = [
-    //   "You're Burning Up!",
-    //   "You're Hot!",
-    //   "You're Cold",
-    //   "You're Freezing!",
-    //   "You Guessed Right!"
-    // ];
+    let commentary = [
+      "You're Burning Up!",
+      "You're Hot!",
+      "You're Cold",
+      "You're Freezing!",
+      "You're Purple Cold!",
+      "Game Won! You're Awesome"
+    ];
+
+    let tryCount = 0;
     //computer choice
     let randCompChoice = computerChoice();
     console.log(randCompChoice);
 
-    //let userPrompt = 0;
 
-    resetButton.addEventListener("click", function () {
-      //randCompChoice = computerChoice()
-      infoBox.textContent = "Game has started"
-      startButton.textContent = "END GAME"
-      console.log("Game Started");
-    });
+    // resetButton.addEventListener("click", function () {
+    //   //randCompChoice = computerChoice()
+    //   infoBox.textContent = "Game has started"
+    //   startButton.textContent = "END GAME"
+    //   console.log("Game Started");
+    // });
+
     //prompt computer to choose a random number between 1 - 20
     function computerChoice() {
       return Math.floor(Math.random() * 21);
     }
 
-    // userChoice.addEventListener("click", () => {
-    //   console.log("I was clicked")
-    //   switch (userPrompt) {
-    //     case userPrompt == 0:
-    //       console.log("correct")
-    //   };
-    // })
+    guessBtn.addEventListener("click", function () {
+      //counts number of tries
+      tryCount += 1;
+
+      //selects user-input value from html
+      let userInput = document.querySelector("#user-input").value;
+      //console.log(userInput);
+
+      //Compare both Results and returns its absolute value
+      let difference = Math.abs(randCompChoice - userInput);
+      //console.log(difference);
+
+      //conditional logic
+      if (difference >= 1 && difference <= 5) {
+        result.textContent = `${commentary[0]}`
+        result.style.color = "rgb(223, 84, 84)";
+        console.log("You're burning up")
+      } else if (difference >= 6 && difference <= 10) {
+        result.textContent = `${commentary[1]}`
+        result.style.color = "rgb(223, 84, 84)";
+        console.log("you're hot")
+      } else if (difference >= 11 && difference <= 15) {
+        result.textContent = `${commentary[2]}`
+        result.style.color = "lightblue";
+        console.log("you're cold")
+      } else if (difference >= 16 && difference <= 20) {
+        result.textContent = `${commentary[3]}`
+        result.style.color = "lightblue";
+        console.log("you're freezing")
+      } else if (difference > 20) {
+        result.textContent = `${commentary[4]}`
+        result.style.color = "lightblue";
+        console.log("you're purple cold")
+      } else if (difference === 0) {
+        result.textContent = `${commentary[5]}`
+        console.log("Game Won! You're Awesome")
+        console.log("You completed the game in " + tryCount + " tries")
+      }
+    })
 
   }, false);
 })()
