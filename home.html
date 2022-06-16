@@ -4,19 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- style sheet -->
+        <link rel="stylesheet" href="./styles/home.css">
     <title>Hot/Cold</title>
 
     <script src="home.js"></script>
 </head>
 <body>
-    <container>
-        <!-- <button id="start-button">START GAME</button> -->
+<div class="container">
+    <h1 class="welcome">Codebreaker</h1>
+    <div class="game-body">
+        <p class="result">You're Hotter</p>
+        <input type="text" name="input" id="input" placeholder="pick a number"> 
+        <button class="guess">Guess</button>
+        <p class="status">Game in Progress</p>
+    </div>
+    <div class="btns">
+        <button class="btn">NEW GAME</button>
+        <button class="btn restart">RESTART</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <!-- <div>
+        <button id="start-button">START GAME</button>
         <h1>Hot or Cold</h1>
         <div>
             <p id=info>this is testing</p>
-            <!-- <button id="user-choice">Guess</button> -->
+            <button id="user-choice">Guess</button>
         </div>
-    </container>
+    </div> -->
 
 </body>
 </html>
