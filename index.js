@@ -11,6 +11,8 @@ function getName() {
 }
 
 
+// I had to comment this part first because I kept getting an error that states document is not defined. I dont understand the error, but I'm sure in the morning, we'll be able to figure it out
+
 // (function () {
 //   document.addEventListener('DOMContentLoaded', function () {
 //     let startButton = document.getElementById("start-button");
