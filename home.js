@@ -1,10 +1,15 @@
 (function () {
   //check if DOM elements are loaded
   document.addEventListener('DOMContentLoaded', function () {
+
+    function getName() {
+      return window.localStorage.getItem('name');
+    }
+
     //selectors for html elements
     //let resetButton = document.getElementById("reset-button");
     let guessBtn = document.querySelector(".guess-btn")
-    let infoBox = document.getElementById("info");
+    //let infoBox = document.getElementById("info");
     let result = document.querySelector(".result")
 
     //computer commentary
@@ -41,11 +46,11 @@
 
       //selects user-input value from html
       let userInput = document.querySelector("#user-input").value;
-      //console.log(userInput);
+      console.log(userInput);
 
       //Compare both Results and returns its absolute value
       let difference = Math.abs(randCompChoice - userInput);
-      //console.log(difference);
+      console.log(difference);
 
       //conditional logic
       if (difference >= 1 && difference <= 5) {
@@ -76,4 +81,4 @@
     })
 
   }, false);
-})()
+})();
