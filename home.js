@@ -2,12 +2,33 @@
   //check if DOM elements are loaded
   document.addEventListener('DOMContentLoaded', function () {
 
+    let timer = document.querySelector(".timer")
+    let countdown;
+    let timeleft = 10;
+    //<progress value="0" max="10" id="progressBar"></progress>
+
+    //timer countdown
+    function timerCountdown() {
+      countdown = setInterval(function () {
+        if (timeleft === 1) {
+          guessBtn.disabled = true
+          clearInterval(countdown);
+
+          result.textContent = `Game Over, after ${tryCount} tries, the answer is ${randCompChoice}`
+
+        }
+        // timer - timeleft;
+        timeleft -= 1;
+        timer.textContent = timeleft
+        //console.log(timeleft)
+      }, 1000);
+    }
+
     function getName() {
       return window.localStorage.getItem('name');
     }
-    console.log(getName())
     //selectors for html elements
-    //let resetButton = document.getElementById("reset-button");
+    let resetButton = document.getElementById("reset-btn");
     let guessBtn = document.querySelector(".guess-btn")
     let welcomeUser = document.querySelector(".welcome")
     welcomeUser.textContent = `Welcome ${getName()}`
@@ -16,12 +37,12 @@
 
     //computer commentary
     let commentary = [
-      "You're Burning Up!",
-      "You're Hot!",
-      "You're Cold",
-      "You're Freezing!",
-      "You're Purple Cold!",
-      "Game Won! You're Awesome"
+      "You're Burning Up! 🔥🔥",
+      "You're Hot! 🔥",
+      "You're Cold 🥶",
+      "You're Freezing! 🥶🥶",
+      "You're Purple Cold! 🥶🥶❄️",
+      "Game Won! You're Awesome! 🎉🎉"
     ];
 
     let tryCount = 0;
@@ -29,13 +50,14 @@
     let randCompChoice = computerChoice();
     console.log(randCompChoice);
 
+    //reloads page, thereby reseting all values
+    function resetGame() {
+      window.location.replace("http://127.0.0.1:5500/home.html");
+    }
 
-    // resetButton.addEventListener("click", function () {
-    //   //randCompChoice = computerChoice()
-    //   infoBox.textContent = "Game has started"
-    //   startButton.textContent = "END GAME"
-    //   console.log("Game Started");
-    // });
+    resetButton.addEventListener("click", function () {
+      resetGame()
+    });
 
     //prompt computer to choose a random number between 1 - 20
     function computerChoice() {
@@ -43,6 +65,7 @@
     }
 
     guessBtn.addEventListener("click", function () {
+      timerCountdown()
       //counts number of tries
       tryCount += 1;
       console.log("You've tried " + tryCount + " times")
@@ -77,9 +100,9 @@
         result.style.color = "lightblue";
         console.log("you're purple cold")
       } else if (difference === 0) {
-        result.textContent = `${commentary[5]}`
-        console.log("Game Won! You're Awesome")
-        console.log("You completed the game in " + tryCount + " tries")
+        clearInterval(countdown);
+        guessBtn.disabled = true
+        result.textContent = `${commentary[5]} in ${tryCount} tries`
       }
     })
 
