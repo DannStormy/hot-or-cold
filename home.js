@@ -16,12 +16,12 @@
 
     //computer commentary
     let commentary = [
-      "You're Burning Up!",
-      "You're Hot!",
-      "You're Cold",
-      "You're Freezing!",
-      "You're Purple Cold!",
-      "Game Won! You're Awesome"
+      "You're Burning Up! 🔥🔥",
+      "You're Hot! 🔥",
+      "You're Cold 🥶",
+      "You're Freezing! 🥶🥶",
+      "You're Purple Cold! 🥶🥶❄️",
+      "Game Won! You're Awesome! 🎉🎉"
     ];
 
     let tryCount = 0;
