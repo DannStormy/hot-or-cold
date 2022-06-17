@@ -5,10 +5,12 @@
     let timer = document.querySelector(".timer")
     let countdown;
     let timeleft = 10;
-    //<progress value="0" max="10" id="progressBar"></progress>
 
     //timer countdown
     function timerCountdown() {
+      //stops timer from rerunning on event trigger
+      clearInterval(countdown);
+      //timer setInterval run
       countdown = setInterval(function () {
         if (timeleft === 1) {
           guessBtn.disabled = true
@@ -68,7 +70,7 @@
       timerCountdown()
       //counts number of tries
       tryCount += 1;
-      console.log("You've tried " + tryCount + " times")
+      //console.log("You've tried " + tryCount + " times")
 
       //selects user-input value from html
       let userInput = document.querySelector("#user-input").value;
@@ -100,6 +102,7 @@
         result.style.color = "lightblue";
         console.log("you're purple cold")
       } else if (difference === 0) {
+        timeleft = 0;
         clearInterval(countdown);
         guessBtn.disabled = true
         result.textContent = `${commentary[5]} in ${tryCount} tries`
