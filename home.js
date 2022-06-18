@@ -111,7 +111,7 @@
         console.log("you're freezing")
       } else if (difference > 20) {
         result.textContent = `${commentary[4]}`
-        pointerAnimation.style.transform = "rotate(-100deg)"
+        pointerAnimation.style.transform = "rotate(-130deg)"
         pointerAnimation.style.borderBottomColor = "purple"
         result.style.color = "lightblue";
         console.log("you're purple cold")
@@ -120,7 +120,7 @@
         clearInterval(countdown);
         guessBtn.disabled = true
         result.textContent = `${commentary[5]} in ${tryCount} tries`
-        pointerAnimation.style.transform = "rotate(100deg)"
+        pointerAnimation.style.transform = "rotate(130deg)"
         pointerAnimation.style.borderBottomColor = "darkred"
       }
     })
