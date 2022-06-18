@@ -2,12 +2,25 @@ const el = document.querySelector(".clock");
 const bell = document.querySelector("audio");
 
 const startBtn = document.querySelector(".start");
-localStorage.setItem("btn", "focus");
 
 let initial, perc, mins;
 
 let seconds = 30;
 let totalsecs = 30;
+
+
+const circle = document.querySelector(".progress-ring-circle");
+const radius = circle.r.baseVal.value;
+const circumference = radius * 2 * Math.PI;
+
+circle.style.strokeDasharray = circumference;
+circle.style.strokeDashoffset = circumference;
+
+function setProgress(percent) {
+  const offset = circumference - (percent / 100) * circumference;
+  circle.style.strokeDashoffset = offset;
+}
+// push
 
 startBtn.addEventListener("click", function () {
 	
@@ -46,3 +59,4 @@ function decrement() {
 		startBtn.style.transform = "scale(1)";
 	}
 }
+// push
