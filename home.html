@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- font -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- style sheet -->
-		<link rel="stylesheet" href="./styles/home.css" />
-		<title>Hot/Cold</title>
 
-		<script src="home.js"></script>
-	</head>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <!-- style sheet -->
+    <link rel="stylesheet" href="./styles/home.css" />
+    <title>Hot/Cold</title>
 
+<<<<<<< HEAD
 	<body class="flex">
         <h1 class="timer">30</h1>
 		<div class="container flex">
@@ -33,20 +29,38 @@
 				/>
 				<button class="guess-btn">GUESS</button>
 			</div>
+=======
+    <script src="home.js"></script>
+</head>
 
-			<div class="btns flex">
-				<button id="reset-btn" class="btn restart">RESTART</button>
-				<a href="./index.html" class="btn back">Go Back</a>
-			</div>
-            <p class="info"></p>
-		</div>
+<body class="flex">
+    <h1 class="timer">1:00</h1>
+    <div class="container flex">
+        <p class="welcome"></p>
+        <div class="game-body flex">
+            <h1 class="result">Game Started</h1>
+            <input type="number" name="input" id="user-input" placeholder="pick a number" />
+            <button class="guess-btn">GUESS</button>
+        </div>
+        <div class="btns flex">
+            <button id="reset-btn" class="btn restart">RESTART</button>
+            <a href="./index.html" class="btn back">Go Back</a>
+        </div>
+        <div class="gauge-flex">
+            <div class="gauge-container">
+                <div class="gauge">
+                    <div class="pointer animate pointerAnimation"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="team">
+        <p class="team-name">Team Codebreakers</p>
+        <p class="members">
+            Daniel Isaac, Oluwayomi Oke, Oluwayemisi Ojo, Oluwatobi Dada
+        </p>
+    </div>
+</body>
+>>>>>>> 1b4dd319f110edc0831d1c963578ce161e89e6f4
 
-		<!-- team name -->
-		<div class="team">
-			<p class="team-name">Team Codebreakers</p>
-			<p class="members">
-				Daniel Isaac, Oluwayomi Oke, Oluwayemisi Ojo, Oluwatobi Dada
-			</p>
-		</div>
-	</body>
 </html>
