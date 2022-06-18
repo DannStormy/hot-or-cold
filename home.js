@@ -4,7 +4,7 @@
 
     let timer = document.querySelector(".timer")
     let countdown;
-    let timeleft = 10;
+    let timeleft = 30;
 
     //timer countdown
     function timerCountdown() {
@@ -16,6 +16,7 @@
           guessBtn.disabled = true
           clearInterval(countdown);
 
+          // Timeout!!! Number of tries 'insert number'. The answer is say answer
           result.textContent = `Game Over, after ${tryCount} tries, the answer is ${randCompChoice}`
 
         }
@@ -104,7 +105,9 @@
       } else if (difference === 0) {
         timeleft = 0;
         clearInterval(countdown);
-        guessBtn.disabled = true
+        result.style.color = "lightblue";
+        guessBtn.disabled = true;
+        guessBtn.style.display = 'none';
         result.textContent = `${commentary[5]} in ${tryCount} tries`
       }
     })
