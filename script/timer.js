@@ -8,7 +8,7 @@ let initial, perc, mins;
 let seconds = 30;
 let totalsecs = 30;
 
-
+// animate the circle
 const circle = document.querySelector(".progress-ring-circle");
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
@@ -20,7 +20,7 @@ function setProgress(percent) {
   const offset = circumference - (percent / 100) * circumference;
   circle.style.strokeDashoffset = offset;
 }
-// push
+// circle animation ends
 
 startBtn.addEventListener("click", function () {
 	
@@ -59,4 +59,3 @@ function decrement() {
 		startBtn.style.transform = "scale(1)";
 	}
 }
-// push
