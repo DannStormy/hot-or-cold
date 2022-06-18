@@ -108,8 +108,8 @@ body {
 }
 
 .gauge-container {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
 }
 .gauge {
@@ -126,13 +126,13 @@ body {
 
 .pointer {
   position: relative;
-  top: 8%;
-  left: 47%;
+  top: 2%;
+  left: 50%;
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 140px solid blue;
+  border-bottom: 90px solid blue;
   border-bottom-left-radius: 35%;
   border-bottom-right-radius: 35%;
   transform-origin: center bottom;
