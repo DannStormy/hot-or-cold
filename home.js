@@ -3,8 +3,12 @@
   document.addEventListener('DOMContentLoaded', function () {
 
     let timer = document.querySelector(".timer")
+
+    let gauge = document.querySelector(".gauge")
+    let pointerAnimation = document.querySelector(".pointerAnimation")
+
     let countdown;
-    let timeleft = 10;
+    let timeleft = 60;
 
     //timer countdown
     function timerCountdown() {
@@ -83,22 +87,32 @@
       //conditional logic
       if (difference >= 1 && difference <= 5) {
         result.textContent = `${commentary[0]}`
+        pointerAnimation.style.transform = "rotate(75deg)";
+        pointerAnimation.style.borderBottomColor = "darkred";
         result.style.color = "rgb(223, 84, 84)";
         console.log("You're burning up")
       } else if (difference >= 6 && difference <= 10) {
         result.textContent = `${commentary[1]}`
+        pointerAnimation.style.transform = "rotate(50deg)"
+        pointerAnimation.style.borderBottomColor = "red"
         result.style.color = "rgb(223, 84, 84)";
         console.log("you're hot")
       } else if (difference >= 11 && difference <= 15) {
         result.textContent = `${commentary[2]}`
+        pointerAnimation.style.transform = "rotate(-50deg)"
+        pointerAnimation.style.borderBottomColor = "blue"
         result.style.color = "lightblue";
         console.log("you're cold")
       } else if (difference >= 16 && difference <= 20) {
         result.textContent = `${commentary[3]}`
+        pointerAnimation.style.transform = "rotate(-75deg)"
+        pointerAnimation.style.borderBottomColor = "rgb(21, 21, 165)"
         result.style.color = "lightblue";
         console.log("you're freezing")
       } else if (difference > 20) {
         result.textContent = `${commentary[4]}`
+        pointerAnimation.style.transform = "rotate(-100deg)"
+        pointerAnimation.style.borderBottomColor = "purple"
         result.style.color = "lightblue";
         console.log("you're purple cold")
       } else if (difference === 0) {
@@ -106,6 +120,8 @@
         clearInterval(countdown);
         guessBtn.disabled = true
         result.textContent = `${commentary[5]} in ${tryCount} tries`
+        pointerAnimation.style.transform = "rotate(100deg)"
+        pointerAnimation.style.borderBottomColor = "darkred"
       }
     })
 
