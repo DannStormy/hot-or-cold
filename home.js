@@ -8,11 +8,7 @@
     let pointerAnimation = document.querySelector(".pointerAnimation")
 
     let countdown;
-<<<<<<< HEAD
     let timeleft = 30;
-=======
-    let timeleft = 60;
->>>>>>> 1b4dd319f110edc0831d1c963578ce161e89e6f4
 
     //timer countdown
     function timerCountdown() {
