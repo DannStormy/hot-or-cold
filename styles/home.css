@@ -7,6 +7,7 @@
 
 body {
   background: #686868 url("../image/bck-img.jpg") no-repeat left center/cover;
+  /* background-color: rgb(34, 34, 34); */
   color: white;
   flex-direction: column;
   position: relative;
@@ -27,6 +28,7 @@ body {
 
 .container {
   background: rgba(0, 0, 0, 0.7);
+  box-shadow: 6px 6px 10px black, -3px -3px 10px rgb(80, 80, 80);
   width: 80%;
   height: 80%;
   padding: 25px;
@@ -56,7 +58,7 @@ body {
 .game-body #user-input {
   padding: 5px;
   outline: none;
-  border-radius: 10px;
+  border-radius: 7px;
   border-color: white;
   width: 50%;
   height: 60px;
