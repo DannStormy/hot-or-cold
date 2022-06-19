@@ -119,27 +119,27 @@
       if (difference >= 1 && difference <= 5) {
         result.textContent = `${commentary[0]}`
         pointerAnimation.style.transform = "rotate(75deg)";
-        pointerAnimation.style.borderBottomColor = "darkred";
+        // pointerAnimation.style.borderBottomColor = "darkred";
         result.style.color = "rgb(223, 84, 84)";
       } else if (difference >= 6 && difference <= 10) {
         result.textContent = `${commentary[1]}`
         pointerAnimation.style.transform = "rotate(50deg)"
-        pointerAnimation.style.borderBottomColor = "red"
+        // pointerAnimation.style.borderBottomColor = "red"
         result.style.color = "rgb(223, 84, 84)";
       } else if (difference >= 11 && difference <= 15) {
         result.textContent = `${commentary[2]}`
         pointerAnimation.style.transform = "rotate(-50deg)"
-        pointerAnimation.style.borderBottomColor = "blue"
+        // pointerAnimation.style.borderBottomColor = "blue"
         result.style.color = "lightblue";
       } else if (difference >= 16 && difference <= 20) {
         result.textContent = `${commentary[3]}`
         pointerAnimation.style.transform = "rotate(-75deg)"
-        pointerAnimation.style.borderBottomColor = "rgb(21, 21, 165)"
+        // pointerAnimation.style.borderBottomColor = "rgb(21, 21, 165)"
         result.style.color = "lightblue";
       } else if (difference > 20) {
         result.textContent = `${commentary[4]}`
         pointerAnimation.style.transform = "rotate(-130deg)"
-        pointerAnimation.style.borderBottomColor = "purple"
+        // pointerAnimation.style.borderBottomColor = "purple"
         result.style.color = "lightblue";
       } else if (difference === 0) {
         seconds = 0;
@@ -151,7 +151,7 @@
         result.style.color = "lightblue";
         result.style.border = "none";
         pointerAnimation.style.transform = "rotate(130deg)"
-        pointerAnimation.style.borderBottomColor = "darkred"
+        // pointerAnimation.style.borderBottomColor = "darkred"
       }
     })
 
