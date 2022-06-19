@@ -151,18 +151,18 @@ form .guess-btn {
 }
 
 .pointer {
-	position: relative;
-	top: 2%;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border-left: 8px solid transparent;
-	border-right: 8px solid transparent;
-	border-bottom: 90px solid rgba(210, 210, 210, 0.912);
-	border-bottom-left-radius: 35%;
-	border-bottom-right-radius: 35%;
-	transform-origin: center bottom;
-	transform: rotate(-125deg);
+  position: relative;
+  top: 2%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 80px solid rgba(210, 210, 210, 0.912);
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 35%;
+  transform-origin: center bottom;
+  transform: rotate(-125deg);
 }
 
 .animate {
