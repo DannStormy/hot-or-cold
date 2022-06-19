@@ -89,7 +89,7 @@
           circle.classList.add("danger");
         }
 
-        if (seconds === 1) {
+        if (seconds === 0) {
           guessBtn.style.transform = "scale(0)";
           result.textContent = `Game Over, after ${tryCount} tries, the answer is ${randCompChoice}`
           bell.play();
