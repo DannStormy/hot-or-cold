@@ -23,6 +23,15 @@
       const offset = circumference - (percent / 100) * circumference;
       circle.style.strokeDashoffset = offset;
     }
+    //get current time
+    const hour = new Date().getHours();
+    let greeting = '';
+    //logic for greeting
+    if (hour < 12) greeting = 'Good morning';
+    else if (hour < 18) greeting = 'Good afternoon';
+    else greeting = 'Good evening';
+
+
 
     function getName() {
       return window.localStorage.getItem('name');
@@ -31,7 +40,7 @@
     let resetButton = document.getElementById("reset-btn");
     let guessBtn = document.querySelector(".guess-btn")
     let welcomeUser = document.querySelector(".welcome")
-    welcomeUser.textContent = `Welcome ${getName()}`
+    welcomeUser.textContent = `${greeting}, ${getName()}`
     let result = document.querySelector(".result")
     let comment = document.querySelector(".comment")
 
@@ -41,7 +50,7 @@
       "You're Hot! 🔥",
       "You're Cold 🥶",
       "You're Freezing! 🥶🥶",
-      "You're Purple Cold! 🥶🥶❄️",
+      "You're Icy Cold! 🥶🥶❄️",
       "Game Won! You're Awesome! 🎉🎉"
     ];
 
@@ -119,27 +128,22 @@
       if (difference >= 1 && difference <= 5) {
         result.textContent = `${commentary[0]}`
         pointerAnimation.style.transform = "rotate(75deg)";
-        // pointerAnimation.style.borderBottomColor = "darkred";
         result.style.color = "rgb(223, 84, 84)";
       } else if (difference >= 6 && difference <= 10) {
         result.textContent = `${commentary[1]}`
         pointerAnimation.style.transform = "rotate(50deg)"
-        // pointerAnimation.style.borderBottomColor = "red"
         result.style.color = "rgb(223, 84, 84)";
       } else if (difference >= 11 && difference <= 15) {
         result.textContent = `${commentary[2]}`
         pointerAnimation.style.transform = "rotate(-50deg)"
-        // pointerAnimation.style.borderBottomColor = "blue"
         result.style.color = "lightblue";
       } else if (difference >= 16 && difference <= 20) {
         result.textContent = `${commentary[3]}`
         pointerAnimation.style.transform = "rotate(-75deg)"
-        // pointerAnimation.style.borderBottomColor = "rgb(21, 21, 165)"
         result.style.color = "lightblue";
       } else if (difference > 20) {
         result.textContent = `${commentary[4]}`
-        pointerAnimation.style.transform = "rotate(-130deg)"
-        // pointerAnimation.style.borderBottomColor = "purple"
+        pointerAnimation.style.transform = "rotate(-135deg)"
         result.style.color = "lightblue";
       } else if (difference === 0) {
         seconds = 0;
@@ -150,8 +154,7 @@
         comment.style.color = "lightblue";
         result.style.color = "lightblue";
         result.style.border = "none";
-        pointerAnimation.style.transform = "rotate(130deg)"
-        // pointerAnimation.style.borderBottomColor = "darkred"
+        pointerAnimation.style.transform = "rotate(139deg)"
       }
     })
 

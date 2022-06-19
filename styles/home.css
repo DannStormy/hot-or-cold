@@ -19,7 +19,7 @@ body {
   height: 100vh;
 }
 #count {
-  font-family: "Tai Heritage Pro", serif;
+  font-family: "Orbitron", sans-serif;
 }
 .flex {
   display: flex;
@@ -162,7 +162,7 @@ form .guess-btn {
   border-bottom-left-radius: 35%;
   border-bottom-right-radius: 35%;
   transform-origin: center bottom;
-  transform: rotate(-125deg);
+  transform: rotate(-135deg);
 }
 
 .animate {
