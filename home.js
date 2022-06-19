@@ -1,34 +1,27 @@
 (function () {
   //check if DOM elements are loaded
   document.addEventListener('DOMContentLoaded', function () {
-
-    let timer = document.querySelector(".timer")
-
-    let gauge = document.querySelector(".gauge")
     let pointerAnimation = document.querySelector(".pointerAnimation")
 
-    let countdown;
-    let timeleft = 30;
+    //const el = document.querySelector(".clock");
+    const bell = document.querySelector("audio");
 
-    //timer countdown
-    function timerCountdown() {
-      //stops timer from rerunning on event trigger
-      clearInterval(countdown);
-      //timer setInterval run
-      countdown = setInterval(function () {
-        if (timeleft === 1) {
-          guessBtn.disabled = true
-          clearInterval(countdown);
+    let initial, perc, mins;
 
-          // Timeout!!! Number of tries 'insert number'. The answer is say answer
-          result.textContent = `Game Over, after ${tryCount} tries, the answer is ${randCompChoice}`
+    let seconds = 30;
+    let totalsecs = 30;
 
-        }
-        // timer - timeleft;
-        timeleft -= 1;
-        timer.textContent = timeleft
-        //console.log(timeleft)
-      }, 1000);
+    // animate the circle
+    const circle = document.querySelector(".progress-ring-circle");
+    const radius = circle.r.baseVal.value;
+    const circumference = radius * 2 * Math.PI;
+
+    circle.style.strokeDasharray = circumference;
+    circle.style.strokeDashoffset = circumference;
+
+    function setProgress(percent) {
+      const offset = circumference - (percent / 100) * circumference;
+      circle.style.strokeDashoffset = offset;
     }
 
     function getName() {
@@ -39,7 +32,6 @@
     let guessBtn = document.querySelector(".guess-btn")
     let welcomeUser = document.querySelector(".welcome")
     welcomeUser.textContent = `Welcome ${getName()}`
-    //let infoBox = document.getElementById("info");
     let result = document.querySelector(".result")
 
     //computer commentary
@@ -71,19 +63,50 @@
       return Math.floor(Math.random() * 21);
     }
 
-    guessBtn.addEventListener("click", function () {
-      timerCountdown()
+    let isTimerActive = false;
+
+    function decrement() {
+      isTimerActive = true;
+
+      if (circle.classList.contains("danger")) {
+        circle.classList.remove("danger");
+      }
+
+      perc = Math.ceil(((totalsecs - seconds) / totalsecs) * 100);
+      setProgress(perc);
+
+      if (seconds > 0) {
+        seconds--;
+        document.getElementById("count").innerHTML = seconds;
+        // clearTimeout(initial)
+
+        if (seconds < 10) {
+          circle.classList.add("danger");
+        }
+
+        if (seconds === 0) {
+          guessBtn.style.transform = "scale(0)";
+          result.textContent = `Game Over, after ${tryCount} tries, the answer is ${randCompChoice}`
+          bell.play();
+        }
+
+        return setTimeout(decrement, 1000);
+      }
+
+      isTimerActive = false;
+    }
+
+    guessBtn.addEventListener("click", function (e) {
+      e.preventDefault()
+      if (!isTimerActive) decrement();
       //counts number of tries
       tryCount += 1;
-      //console.log("You've tried " + tryCount + " times")
 
       //selects user-input value from html
       let userInput = document.querySelector("#user-input").value;
-      //console.log(userInput);
 
       //Compare both Results and returns its absolute value
       let difference = Math.abs(randCompChoice - userInput);
-      //console.log(difference);
 
       //conditional logic
       if (difference >= 1 && difference <= 5) {
@@ -117,8 +140,7 @@
         result.style.color = "lightblue";
         console.log("you're purple cold")
       } else if (difference === 0) {
-        timeleft = 0;
-        clearInterval(countdown);
+        seconds = 0;
         result.style.color = "lightblue";
         guessBtn.disabled = true;
         guessBtn.style.display = 'none';
