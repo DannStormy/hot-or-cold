@@ -1,151 +1,151 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 :root {
-	--primary: #0c0b0b;
-	--secondary: #ffffff;
+  --primary: #0c0b0b;
+  --secondary: #ffffff;
 }
 
 body {
-	background: #dfdfdf;
-	color: var(--primary);
-	flex-direction: column;
-	position: relative;
-	width: 100vw;
-	height: 100vh;
+  background: #dfdfdf;
+  color: var(--primary);
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
 .flex {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* clock */
 .clock-wrapper {
-	flex-direction: column;
+  flex-direction: column;
 
-	position: absolute;
-	top: 10px;
-	right: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 /* the main clock styling can be found in timer.css */
 .restart {
-	background-color: transparent;
-	color: var(--primary);
-	padding: 10px 15px;
-	outline: none;
-	border: 2px solid var(--primary);
-	border-radius: 7px;
-	margin-bottom: 10px;
-	font-weight: 500;
+  background-color: transparent;
+  color: var(--primary);
+  padding: 10px 15px;
+  outline: none;
+  border: 2px solid var(--primary);
+  border-radius: 7px;
+  margin-bottom: 10px;
+  font-weight: 500;
   cursor: pointer;
 }
 .restart:hover {
-	background-color: rgb(7, 132, 18);
-	color: var(--secondary);
-	border-color: rgb(7, 132, 18);
-	transition: 0.7s;
+  background-color: rgb(7, 132, 18);
+  color: var(--secondary);
+  border-color: rgb(7, 132, 18);
+  transition: 0.7s;
 }
 
 /* into */
 .intro {
-	position: absolute;
+  position: absolute;
 
-	top: 20px;
-	left: 20px;
+  top: 20px;
+  left: 20px;
 }
 .welcome {
-	text-align: center;
-	font-size: 23px;
-	font-weight: bold;
-	color: #171717;
-	text-transform: capitalize;
+  text-align: center;
+  font-size: 23px;
+  font-weight: bold;
+  color: #171717;
+  text-transform: capitalize;
 }
 .back {
-	display: inline-block;
-	margin-top: 5px;
-	font-size: 15px;
-	text-decoration: none;
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 15px;
+  text-decoration: none;
 }
 
 /* Game Card */
 .container {
-	background: var(--primary);
-	color: var(--secondary);
-	box-shadow: 6px 6px 10px rgb(80, 80, 80), -3px -3px 10px rgb(80, 80, 80);
-	width: 55%;
-	height: 70%;
-	padding: 25px;
+  background: var(--primary);
+  color: var(--secondary);
+  box-shadow: 6px 6px 10px rgb(80, 80, 80), -3px -3px 10px rgb(80, 80, 80);
+  width: 55%;
+  height: 70%;
+  padding: 25px;
 }
 
 .game-body {
-	flex-direction: column;
-	text-align: center;
+  flex-direction: column;
+  text-align: center;
 }
 .game-body .comment {
-	font-size: 22px;
-	margin-top: 10px;
+  font-size: 22px;
+  margin-top: 10px;
 }
 .game-body .result {
-	margin: 10px 0 30px;
-	border: 1px solid #eaeaea2a;
-	padding: 10px 25px;
-	border-radius: 10px;
-	font-weight: 500;
+  margin: 10px 0 30px;
+  border: 1px solid #eaeaea2a;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: 500;
 }
 
 form #user-input {
-	padding: 10px 15px;
-	outline: none;
-	/* border-radius: 7px; */
-	border: none;
-	width: 140px;
-	margin-right: 10px;
+  padding: 10px 15px;
+  outline: none;
+  /* border-radius: 7px; */
+  border: none;
+  width: 140px;
+  margin-right: 10px;
 }
 #user-input:focus {
-	border: 3px solid rgb(5, 5, 155);
+  border: 3px solid rgb(5, 5, 155);
 }
 form .guess-btn {
-	margin: 10px 0;
-	background: transparent;
-	color: rgb(222, 222, 222);
-	padding: 10px 15px;
-	width: 100px;
-	outline: none;
-	border: 1px solid var(--secondary);
-	border-radius: 7px;
-	cursor: pointer;
+  margin: 10px 0;
+  background: transparent;
+  color: rgb(222, 222, 222);
+  padding: 10px 15px;
+  width: 100px;
+  outline: none;
+  border: 1px solid var(--secondary);
+  border-radius: 7px;
+  cursor: pointer;
 }
 .guess-btn:hover {
-	background-color: #5b0000;
-	border-color: #5b0000;
-	transition: 0.7s;
+  background-color: #5b0000;
+  border-color: #5b0000;
+  transition: 0.7s;
 }
 
 .gauge-flex {
-	padding: 5px;
+  padding: 5px;
 }
 
 .gauge-container {
-	width: 200px;
-	height: 200px;
-	margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
 }
 .gauge {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	border: 10px solid grey;
-	border-right: 10px solid darkred;
-	border-left: 10px solid darkblue;
-	border-top: 10px solid blue;
-	border-bottom: 10px solid transparent;
-	border-radius: 50%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 10px solid grey;
+  border-right: 10px solid darkred;
+  border-left: 10px solid darkblue;
+  border-top: 10px solid blue;
+  border-bottom: 10px solid transparent;
+  border-radius: 50%;
 }
 
 .pointer {
@@ -164,50 +164,25 @@ form .guess-btn {
 }
 
 .animate {
-	-webkit-transition-duration: 1.5s;
-	-webkit-transition-property: 0 opacity;
-	-webkit-transition-timing-function: ease;
-	-moz-transition-duration: 1.5s;
-	-o-transition-duration: 1.5s;
-	transition-duration: 1.5s;
-	-moz-transition-property: 0 opacity;
-	-o-transition-property: 0 opacity;
-	transition-property: 0 opacity;
-	-moz-transition-timing-function: ease;
-	-o-transition-timing-function: ease;
-	transition-timing-function: ease;
-}
-
-@-webkit-keyframes rotation {
-	from {
-		-webkit-transform: rotate(-125deg);
-	}
-	to {
-		-webkit-transform: rotate(125deg);
-		border-bottom-color: green;
-	}
-}
-
-@keyframes rotation {
-	from {
-		transform: rotate(-125deg);
-	}
-	to {
-		transform: rotate(125deg);
-		border-bottom-color: green;
-	}
-}
-
-.autoAnimation {
-	animation: rotation 1500ms 1s forwards;
-	-webkit-animation: rotation 1500ms 1s forwards;
+  -webkit-transition-duration: 1.5s;
+  -webkit-transition-property: 0 opacity;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-duration: 1.5s;
+  -o-transition-duration: 1.5s;
+  transition-duration: 1.5s;
+  -moz-transition-property: 0 opacity;
+  -o-transition-property: 0 opacity;
+  transition-property: 0 opacity;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
 }
 
 .team {
-	color: var(--primary);
-	font-weight: 500;
-	text-align: center;
+  color: var(--primary);
+  font-weight: 500;
+  text-align: center;
 
-	position: absolute;
-	bottom: 10px;
+  position: absolute;
+  bottom: 10px;
 }
