@@ -160,7 +160,7 @@ body {
   transition-timing-function: ease;
 }
 
-@-webkit-keyframes rotation {
+/* @-webkit-keyframes rotation {
   from {
     -webkit-transform: rotate(-125deg);
   }
@@ -178,7 +178,7 @@ body {
     transform: rotate(125deg);
     border-bottom-color: green;
   }
-}
+} */
 
 .autoAnimation {
   animation: rotation 1500ms 1s forwards;
