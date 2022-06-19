@@ -20,6 +20,7 @@ body {
 }
 #count {
   font-family: "Orbitron", sans-serif;
+  font-size: 40px;
 }
 .flex {
   display: flex;
