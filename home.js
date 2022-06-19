@@ -1,12 +1,10 @@
 (function () {
   //check if DOM elements are loaded
   document.addEventListener('DOMContentLoaded', function () {
-
     let pointerAnimation = document.querySelector(".pointerAnimation")
 
     //const el = document.querySelector(".clock");
     const bell = document.querySelector("audio");
-
 
     let initial, perc, mins;
 
@@ -34,7 +32,6 @@
     let guessBtn = document.querySelector(".guess-btn")
     let welcomeUser = document.querySelector(".welcome")
     welcomeUser.textContent = `Welcome ${getName()}`
-    //let infoBox = document.getElementById("info");
     let result = document.querySelector(".result")
 
     //computer commentary
@@ -79,8 +76,6 @@
       setProgress(perc);
 
       if (seconds > 0) {
-        // perc = Math.ceil(((totalsecs - seconds) / totalsecs) * 100);
-        // setProgress(perc);
         seconds--;
         document.getElementById("count").innerHTML = seconds;
         // clearTimeout(initial)
@@ -98,7 +93,6 @@
         return setTimeout(decrement, 1000);
       }
 
-      //startTimerBtn.style.transform = "scale(1)";
       isTimerActive = false;
     }
 
