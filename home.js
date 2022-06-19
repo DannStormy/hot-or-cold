@@ -50,7 +50,7 @@
       "You're Hot! 🔥",
       "You're Cold 🥶",
       "You're Freezing! 🥶🥶",
-      "You're Purple Cold! 🥶🥶❄️",
+      "You're Icy Cold! 🥶🥶❄️",
       "Game Won! You're Awesome! 🎉🎉"
     ];
 
