@@ -9,42 +9,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Tai+Heritage+Pro:wght@700&display=swap" rel="stylesheet">
     <!-- style sheet -->
     <link rel="stylesheet" href="./styles/home.css" />
-    <link rel="stylesheet" href="./styles/timer.css">
+    <link rel="stylesheet" href="./styles/timer.css" />
     <title>Hot/Cold</title>
 
     <script src="home.js"></script>
 </head>
 
 <body class="flex">
-    <!-- <h1 class="timer">1:00</h1> -->
-    <div class="clock">
-        <!-- <div class="mins">0</div> -->
-        <div id="count">30</div>
-        <!-- <div class="secs">00</div> -->
+    <!-- clock -->
+    <div class="clock-wrapper flex">
+        <div class="clock">
+            <div id="count">30</div>
 
-        <!-- audio -->
-        <audio src="https://soundbible.com/mp3/service-bell_daniel_simion.mp3"></audio>
+            <!-- audio -->
+            <audio src="https://soundbible.com/mp3/service-bell_daniel_simion.mp3"></audio>
 
-        <!-- svg circle -->
-        <svg class="progress-ring" height="120" width="120">
-            <circle class="progress-ring-circle" stroke-width="8" fill="transparent" r="50" cx="60" cy="60" />
-        </svg>
+            <!-- svg circle -->
+            <svg class="progress-ring" height="120" width="120">
+                <circle class="progress-ring-circle" stroke-width="8" fill="gray" r="50" cx="60" cy="60"
+                    fill-opacity="0.3" />
+            </svg>
+        </div>
+        <button id="reset-btn" class="restart">RESTART</button>
     </div>
-    <div class="container flex">
+
+    <div class="intro">
         <p class="welcome"></p>
-        <div class="game-body flex">
-            <h1 class="result">Game Started</h1>
-            <form action="">
-                <input type="number" name="input" id="user-input" placeholder="pick a number" />
-                <input type="submit" class="guess-btn" value="GUESS" />
-            </form>
-        </div>
-        <div class="btns flex">
-            <button id="reset-btn" class="btn restart">RESTART</button>
-            <a href="./index.html" class="btn back">Go Back</a>
-        </div>
+        <a href="./index.html" class="btn back">&#171; Go back</a>
+    </div>
+
+    <!-- container -->
+    <div class="container">
         <div class="gauge-flex">
             <div class="gauge-container">
                 <div class="gauge">
@@ -52,15 +50,25 @@
                 </div>
             </div>
         </div>
+
+        <div class="game-body flex">
+            <h3 class="comment"></h3>
+            <p class="result">Enter a number to start game</p>
+            <form class="flex">
+                <input type="number" name="input" id="user-input" placeholder="pick a number" />
+                <input type="submit" class="guess-btn" value="GUESS" />
+            </form>
+        </div>
+
     </div>
+
+    <!-- team -->
     <div class="team">
         <p class="team-name">Team Codebreakers</p>
         <p class="members">
             Daniel Isaac, Oluwayomi Oke, Oluwayemisi Ojo, Oluwatobi Dada
         </p>
     </div>
-    <!-- <script src="timer.js"></script> -->
-
 </body>
 
 </html>
