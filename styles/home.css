@@ -18,7 +18,9 @@ body {
   width: 100vw;
   height: 100vh;
 }
-
+#count {
+  font-family: "Tai Heritage Pro", serif;
+}
 .flex {
   display: flex;
   justify-content: center;
