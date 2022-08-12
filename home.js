@@ -61,7 +61,7 @@
 
     //reloads page, thereby reseting all values
     function resetGame() {
-      window.location.replace("http://127.0.0.1:5500/home.html");
+      window.location.replace("/home.html");
     }
 
     resetButton.addEventListener("click", function () {
